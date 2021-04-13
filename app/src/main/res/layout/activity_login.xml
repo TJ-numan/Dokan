@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/baground2"
+    android:background="@drawable/onlineopy"
     tools:context=".LoginActivity">
 
     <com.airbnb.lottie.LottieAnimationView
@@ -35,31 +35,36 @@
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:paddingLeft="10dp"
-            android:src="@drawable/email" />
+            android:src="@drawable/phone" />
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/loginnumber"
             android:layout_width="match_parent"
             android:layout_height="44dp"
-            android:autofillHints="email here"
+            android:hint="your phone number here"
             android:background="@null"
-            android:inputType="textEmailAddress"
+            android:inputType="phone"
             android:paddingLeft="8dp"
             android:paddingRight="9dp"
             tools:ignore="LabelFor" />
 
     </LinearLayout>
-
+<LinearLayout
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="32dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/linearLayout">
     <LinearLayout
-        android:id="@+id/linearLayout2"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:background="@drawable/shape2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        >
 
         <ImageView
             android:layout_width="35dp"
@@ -70,33 +75,68 @@
 
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/loginpassword"
             android:layout_width="match_parent"
             android:layout_height="44dp"
-            android:autofillHints="email here"
             android:background="@null"
+            android:hint="your password"
             android:inputType="textPassword"
             android:paddingLeft="8dp"
             android:paddingRight="9dp"
             tools:ignore="LabelFor" />
 
-
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <CheckBox
+            android:id="@+id/chekbox"
+            android:layout_width="wrap_content"
+            android:text="remeber me"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/forgotpass"
+            android:textColor="@color/black"
+            android:gravity="end"
+            android:layout_marginEnd="12dp"
+            android:text="forgot password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp" />
 
     </LinearLayout>
 
+
+</LinearLayout>
+
+
     <Button
+        android:id="@+id/loginbtn"
         android:layout_width="168dp"
         android:layout_height="42dp"
-        android:background="@drawable/buttonbaground"
+        android:background="@drawable/buttonbaground2"
         android:textAllCaps="false"
         android:text="Login"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/linearLayout2"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         app:layout_constraintVertical_bias="0.326" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="314dp"
+        android:layout_marginTop="250dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:visibility="gone"
+        app:lottie_rawRes="@raw/progressbar"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

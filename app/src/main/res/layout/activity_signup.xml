@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/baground2"
+    android:background="@drawable/onlineopy"
     tools:context=".SignupActivity">
 
 
@@ -41,7 +41,9 @@
             android:id="@+id/fullname"
             android:layout_width="match_parent"
             android:layout_height="44dp"
+            android:textColor="#A97EDF"
             android:autofillHints="email here"
+            android:hint="your full name here"
             android:background="@null"
             android:inputType="textPersonName"
             android:paddingLeft="8dp"
@@ -64,15 +66,16 @@
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:paddingLeft="10dp"
-            android:src="@drawable/email" />
+            android:src="@drawable/phone" />
 
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="44dp"
-            android:autofillHints="email here"
+            android:hint="your phone number here"
             android:background="@null"
-            android:inputType="textEmailAddress"
+            android:textColor="#A97EDF"
+            android:inputType="phone"
             android:paddingLeft="8dp"
             android:paddingRight="9dp"
             tools:ignore="LabelFor" />
@@ -104,8 +107,10 @@
             android:layout_height="44dp"
             android:autofillHints="email here"
             android:background="@null"
+            android:hint="your password here"
             android:inputType="textPassword"
             android:paddingLeft="8dp"
+            android:textColor="#A97EDF"
             android:paddingRight="9dp"
             tools:ignore="LabelFor" />
 
@@ -136,7 +141,9 @@
             android:autofillHints="email here"
             android:background="@null"
             android:inputType="textPassword"
+            android:hint="retype the same password here"
             android:paddingLeft="8dp"
+            android:textColor="#A97EDF"
             android:paddingRight="9dp"
             tools:ignore="LabelFor" />
 
@@ -145,17 +152,33 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/signupbtn"
         android:layout_width="168dp"
         android:layout_height="42dp"
         android:layout_marginTop="36dp"
-        android:background="@drawable/buttonbaground"
+        android:background="@drawable/buttonbaground2"
         android:text="Signup"
-        android:textStyle="bold"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/progresslogin"
+        android:layout_width="match_parent"
+        android:layout_height="314dp"
+        android:layout_marginTop="220dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:visibility="gone"
+        app:lottie_rawRes="@raw/progressbar"
+         />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
