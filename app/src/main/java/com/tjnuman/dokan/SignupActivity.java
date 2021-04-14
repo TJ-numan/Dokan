@@ -65,6 +65,12 @@ public class SignupActivity extends AppCompatActivity {
             userPhone.requestFocus();
             return;
         }
+        else if(phone.length()<11)
+        {
+            userPhone.setError("Phone number should be 11 character!");
+            userPhone.requestFocus();
+            return;
+        }
         else if(password.isEmpty())
         {
             userPassword.setError("Password can't be empty");
@@ -74,14 +80,21 @@ public class SignupActivity extends AppCompatActivity {
         else if(password.length()<6)
         {
             userPassword.setError("Password length should be 6 charectars!");
+            userPassword.requestFocus();
+            return;
         }
-        else if(!retypepassword.equals(password))
+        else if(retypepassword.equals(password))
         {
             retypepassword.setError("Password didn't match");
+            userPassword.requestFocus();
+            return;
         }
         else
         {
             progressbar.setVisibility(View.VISIBLE);
+            userName.setEnabled(false);
+            userPassword.setEnabled(false);
+            userPhone.setEnabled(false);
             ValidatephoneNumber(name,phone,password);
         }
 
@@ -109,7 +122,11 @@ public class SignupActivity extends AppCompatActivity {
 
                                     if(task.isSuccessful()){
                                         Toast.makeText(SignupActivity.this, "Congratulations! you account has been created", Toast.LENGTH_LONG).show();
+
                                         progressbar.setVisibility(View.GONE);
+                                        userName.setEnabled(true);
+                                        userPassword.setEnabled(true);
+                                        userPhone.setEnabled(true);
                                         Intent intent = new Intent(SignupActivity.this,DashBoardActivity.class);
                                         startActivity(intent);
                                         finish();
@@ -117,6 +134,9 @@ public class SignupActivity extends AppCompatActivity {
                                     else{
                                         Toast.makeText(SignupActivity.this, "Network error please try again", Toast.LENGTH_LONG).show();
                                         progressbar.setVisibility(View.GONE);
+                                        userName.setEnabled(true);
+                                        userPassword.setEnabled(true);
+                                        userPhone.setEnabled(true);
                                     }
                                 }
                             });
@@ -125,6 +145,9 @@ public class SignupActivity extends AppCompatActivity {
                 {
                     Toast.makeText(SignupActivity.this, "An account with "+phone+"is already exist. please try with new one", Toast.LENGTH_LONG).show();
                     progressbar.setVisibility(View.GONE);
+                    userName.setEnabled(true);
+                    userPassword.setEnabled(true);
+                    userPhone.setEnabled(true);
 
                 }
             }

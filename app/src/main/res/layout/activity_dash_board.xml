@@ -4,8 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/online"
+    android:background="@drawable/onlineopy"
     tools:context=".DashBoardActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="23dp"
+        android:text="this is the dash board"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/logoutbtn"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:text="logout"
+        android:layout_height="wrap_content"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
