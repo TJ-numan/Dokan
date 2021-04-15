@@ -8,16 +8,8 @@ public class Sessions {
     SharedPreferences.Editor editor;
     Context context;
 
-    public Sessions() {
-    }
 
-    public Sessions(Context context) {
-        this.context = context;
-        sharedPreferences = context.getSharedPreferences("userLoginSassion",Context.MODE_PRIVATE);
-        editor = sharedPreferences.edit();
-    }
-
-    public static void isLogin(Context context, boolean loginStatus)
+    public static void isLoginUser(Context context, boolean loginStatus)
     {
         SharedPreferences pref = context.getSharedPreferences("LOGIN_STATUS",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
@@ -25,8 +17,23 @@ public class Sessions {
         editor.apply();
     }
 
-    public static boolean getLoginStatus(Context context){
+    public static boolean getLoginStatusofUser(Context context){
         SharedPreferences pref = context.getSharedPreferences("LOGIN_STATUS",Context.MODE_PRIVATE);
         return pref.getBoolean("login_status",false);
     }
+
+
+    public static void isLoginAdmin(Context context, boolean loginStatus)
+    {
+        SharedPreferences pref = context.getSharedPreferences("LOGIN_STATUS",Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean("login_status",loginStatus);
+        editor.apply();
+    }
+
+    public static boolean getLoginStatusofAdmin(Context context){
+        SharedPreferences pref = context.getSharedPreferences("LOGIN_STATUS",Context.MODE_PRIVATE);
+        return pref.getBoolean("login_status",false);
+    }
+
 }

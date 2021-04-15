@@ -2,6 +2,7 @@ package com.tjnuman.dokan;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -18,6 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.tjnuman.dokan.AdminClasses.AdminAddNewProductActivity;
 import com.tjnuman.dokan.Model.Users;
 import com.tjnuman.dokan.Prevalent.Sessions;
 
@@ -26,6 +29,9 @@ public class LoginActivity extends AppCompatActivity {
     Button loginbutton;
     LottieAnimationView progressbar;
     CheckBox checkBox;
+    TextView admintext,usertext;
+    ConstraintLayout constraintLayout;
+    String parentDBname = "Users";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +42,34 @@ public class LoginActivity extends AppCompatActivity {
         loginbutton = findViewById(R.id.loginbtn);
         progressbar = findViewById(R.id.progress);
         checkBox = findViewById(R.id.chekbox);
+        admintext = findViewById(R.id.admintext);
+        usertext = findViewById(R.id.usertext);
+        constraintLayout =(ConstraintLayout) findViewById(R.id.mainwindow);
+
+
+        admintext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginbutton.setText("Login as admin");
+                loginbutton.setBackgroundResource(R.drawable.buttonbagroundadmin);
+                admintext.setVisibility(View.GONE);
+                usertext.setVisibility(View.VISIBLE);
+                constraintLayout.setBackgroundResource(R.drawable.adminbg);
+                parentDBname = "Admins";
+            }
+        });
+
+        usertext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginbutton.setText("Login");
+                usertext.setVisibility(View.GONE);
+                admintext.setVisibility(View.VISIBLE);
+                loginbutton.setBackgroundResource(R.drawable.buttonbaground2);
+                constraintLayout.setBackgroundResource(R.drawable.onlineopy);
+                parentDBname = "Users";
+            }
+        });
 
 
         loginbutton.setOnClickListener(new View.OnClickListener() {
@@ -89,19 +123,32 @@ public class LoginActivity extends AppCompatActivity {
         rootref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.child("Users").child(phone).exists())
+                if(snapshot.child(parentDBname).child(phone).exists())
                 {
 
-                    Users userData = snapshot.child("Users").child(phone).getValue(Users.class);
+                    Users userData = snapshot.child(parentDBname).child(phone).getValue(Users.class);
                     if(userData.getPhone().equals(phone)){
                         if(userData.getPassword().equals(password)){
-                            if(checkBox.isChecked()){
-                                Sessions.isLogin(LoginActivity.this,true);
+                            if(parentDBname.equals("Admins")){
+                                if(checkBox.isChecked()){
+                                    Sessions.isLoginAdmin(LoginActivity.this,true);
+                                }
+                                Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
+                                progressbar.setVisibility(View.GONE);
+                                Intent intent = new Intent(LoginActivity.this, AdminAddNewProductActivity.class);
+                                startActivity(intent);
+
                             }
-                            Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
-                            progressbar.setVisibility(View.GONE);
-                            Intent intent = new Intent(LoginActivity.this,DashBoardActivity.class);
-                            startActivity(intent);
+                            else if(parentDBname.equals("Users")){
+                                if(checkBox.isChecked()){
+                                    Sessions.isLoginUser(LoginActivity.this,true);
+                                }
+                                Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
+                                progressbar.setVisibility(View.GONE);
+                                Intent intent = new Intent(LoginActivity.this,DashBoardActivity.class);
+                                startActivity(intent);
+                            }
+
                         }
                         else{
                             Toast.makeText(LoginActivity.this, "The password is in correct", Toast.LENGTH_LONG).show();

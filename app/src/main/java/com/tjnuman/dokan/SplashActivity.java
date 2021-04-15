@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.tjnuman.dokan.AdminClasses.AdminAddNewProductActivity;
 import com.tjnuman.dokan.Prevalent.Sessions;
 
 public class SplashActivity extends AppCompatActivity {
@@ -49,12 +50,16 @@ public class SplashActivity extends AppCompatActivity {
         },2000);
 
 
-        if(Sessions.getLoginStatus(SplashActivity.this))
+        if(Sessions.getLoginStatusofUser(SplashActivity.this))
         {
             Intent intent = new Intent(SplashActivity.this, DashBoardActivity.class);
             startActivity(intent);
             finish();
-
+        }
+        else if(Sessions.getLoginStatusofUser(SplashActivity.this)){
+            Intent intent = new Intent(SplashActivity.this, AdminAddNewProductActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         joinbutton.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +67,6 @@ public class SplashActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent mainIntent = new Intent(SplashActivity.this,SignupActivity.class);
                 SplashActivity.this.startActivity(mainIntent);
-
             }
         });
 
@@ -77,4 +81,4 @@ public class SplashActivity extends AppCompatActivity {
 
 
     }
-    }
+}

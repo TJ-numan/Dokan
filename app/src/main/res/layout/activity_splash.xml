@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="false"
-        app:lottie_speed="0.6"
+        app:lottie_speed="0.9"
         app:lottie_loop="false"
         app:lottie_rawRes="@raw/onlineshoping" />
 

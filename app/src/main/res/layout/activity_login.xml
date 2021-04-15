@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:padding="10dp"
     android:layout_height="match_parent"
+    android:id="@+id/mainwindow"
     android:background="@drawable/onlineopy"
+    android:padding="10dp"
     tools:context=".LoginActivity">
 
     <com.airbnb.lottie.LottieAnimationView
@@ -42,105 +43,137 @@
             android:id="@+id/loginnumber"
             android:layout_width="match_parent"
             android:layout_height="44dp"
-            android:hint="your phone number here"
             android:background="@null"
+            android:hint="your phone number here"
             android:inputType="phone"
             android:paddingLeft="8dp"
             android:paddingRight="9dp"
             tools:ignore="LabelFor" />
 
     </LinearLayout>
-<LinearLayout
-    android:id="@+id/linearLayout2"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_marginTop="32dp"
-    android:layout_height="wrap_content"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-    <LinearLayout
 
+    <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape2"
-        >
+        android:layout_marginTop="32dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:paddingLeft="10dp"
-            android:src="@drawable/lock" />
+        <LinearLayout
 
-
-        <EditText
-            android:id="@+id/loginpassword"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:background="@null"
-            android:hint="your password"
-            android:inputType="textPassword"
-            android:paddingLeft="8dp"
-            android:paddingRight="9dp"
-            tools:ignore="LabelFor" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape2">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:paddingLeft="10dp"
+                android:src="@drawable/lock" />
+
+
+            <EditText
+                android:id="@+id/loginpassword"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@null"
+                android:hint="your password"
+                android:inputType="textPassword"
+                android:paddingLeft="8dp"
+                android:paddingRight="9dp"
+                tools:ignore="LabelFor" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/chekbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/white"
+                android:text="remeber me"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/forgotpass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="9dp"
+                android:layout_marginRight="8dp"
+                android:text="forgot password"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
 
     </LinearLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
-        <CheckBox
-            android:id="@+id/chekbox"
-            android:layout_width="wrap_content"
-            android:text="remeber me"
-            android:buttonTint="@color/white"
-            android:textColor="@color/white"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/forgotpass"
-            android:textColor="@color/white"
-            android:layout_marginTop="9dp"
-            android:text="forgot password"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="8dp" />
-
-    </RelativeLayout>
-
-
-</LinearLayout>
 
 
     <Button
         android:id="@+id/loginbtn"
         android:layout_width="168dp"
         android:layout_height="42dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/buttonbaground2"
-        android:textAllCaps="false"
         android:text="Login"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.326" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/progress"
         android:layout_width="match_parent"
         android:layout_height="314dp"
         android:layout_marginTop="250dp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
+        app:lottie_rawRes="@raw/progressbar" />
+
+    <TextView
+        android:id="@+id/admintext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="I am an admin"
+        android:textColor="#F19393"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginbtn"
+        app:layout_constraintVertical_bias="0.764" />
+
+    <TextView
+        android:id="@+id/usertext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="I am an user"
         android:visibility="gone"
-        app:lottie_rawRes="@raw/progressbar"
-        />
+        android:textColor="#F19393"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/admintext"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginbtn"
+        app:layout_constraintVertical_bias="0.764" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
