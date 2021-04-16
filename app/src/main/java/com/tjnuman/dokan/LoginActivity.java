@@ -20,7 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.tjnuman.dokan.AdminClasses.AdminAddNewProductActivity;
+import com.tjnuman.dokan.AdminClasses.AdminCatagoryActivity;
 import com.tjnuman.dokan.Model.Users;
 import com.tjnuman.dokan.Prevalent.Sessions;
 
@@ -135,7 +135,7 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                                 Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
                                 progressbar.setVisibility(View.GONE);
-                                Intent intent = new Intent(LoginActivity.this, AdminAddNewProductActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, AdminCatagoryActivity.class);
                                 startActivity(intent);
 
                             }

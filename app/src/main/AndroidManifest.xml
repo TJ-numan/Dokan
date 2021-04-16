@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dokan">
         <activity android:name=".AdminClasses.AdminAddNewProductActivity"></activity>
+        <activity android:name=".AdminClasses.AdminCatagoryActivity" />
         <activity
             android:name=".DashBoardActivity"
             android:label="@string/title_activity_dash_board"

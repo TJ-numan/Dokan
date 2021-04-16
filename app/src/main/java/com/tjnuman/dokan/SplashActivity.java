@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.tjnuman.dokan.AdminClasses.AdminAddNewProductActivity;
+import com.tjnuman.dokan.AdminClasses.AdminCatagoryActivity;
 import com.tjnuman.dokan.Prevalent.Sessions;
 
 public class SplashActivity extends AppCompatActivity {
@@ -56,8 +56,8 @@ public class SplashActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-        else if(Sessions.getLoginStatusofUser(SplashActivity.this)){
-            Intent intent = new Intent(SplashActivity.this, AdminAddNewProductActivity.class);
+        else if(Sessions.getLoginStatusofAdmin(SplashActivity.this)){
+            Intent intent = new Intent(SplashActivity.this, AdminCatagoryActivity.class);
             startActivity(intent);
             finish();
         }

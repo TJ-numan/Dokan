@@ -23,7 +23,7 @@ public class DashBoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                // FirebaseAuth.getInstance().signOut();
-                Sessions.isLoginUser(DashBoardActivity.this,false);
+               Sessions.isLoginUser(DashBoardActivity.this,false);
                 startActivity(new Intent(DashBoardActivity.this, SplashActivity.class));
                 finish();
             }
