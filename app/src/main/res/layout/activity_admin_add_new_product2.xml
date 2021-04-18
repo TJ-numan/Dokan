@@ -70,9 +70,23 @@
         android:gravity="center"
         android:text="Add Product"
         android:textColor="@color/white"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/productprice"
         app:layout_constraintStart_toStartOf="@+id/productprice"
         app:layout_constraintTop_toBottomOf="@+id/productprice" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loadingbaranimation"
+        android:layout_width="match_parent"
+        android:layout_height="314dp"
+        android:layout_marginTop="250dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

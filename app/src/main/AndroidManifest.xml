@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dokan">
-        <activity android:name=".AdminClasses.AdminAddNewProductActivity"></activity>
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.Dokan.NoActionBar"></activity>
+        <activity android:name=".ClothingActivity" />
+        <activity android:name=".AdminClasses.AdminAddNewProductActivity" />
         <activity android:name=".AdminClasses.AdminCatagoryActivity" />
         <activity
             android:name=".DashBoardActivity"
