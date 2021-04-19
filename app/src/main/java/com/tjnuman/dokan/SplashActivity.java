@@ -52,7 +52,7 @@ public class SplashActivity extends AppCompatActivity {
 
         if(Sessions.getLoginStatusofUser(SplashActivity.this))
         {
-            Intent intent = new Intent(SplashActivity.this, DashBoardActivity.class);
+            Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
             startActivity(intent);
             finish();
         }
@@ -73,7 +73,7 @@ public class SplashActivity extends AppCompatActivity {
         loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mainIntent = new Intent(SplashActivity.this,HomeActivity.class);
+                Intent mainIntent = new Intent(SplashActivity.this,LoginActivity.class);
                 SplashActivity.this.startActivity(mainIntent);
 
             }

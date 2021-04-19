@@ -15,11 +15,6 @@
         android:text="this is the dash board"
         android:layout_height="wrap_content"/>
 
-    <Button
-        android:id="@+id/logoutbtn"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:text="logout"
-        android:layout_height="wrap_content"/>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

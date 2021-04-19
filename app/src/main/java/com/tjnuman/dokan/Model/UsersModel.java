@@ -1,13 +1,13 @@
 package com.tjnuman.dokan.Model;
 
-public class Users {
+public class UsersModel {
 
     private String name,phone,password;
 
-    public Users() {
+    public UsersModel() {
     }
 
-    public Users(String name, String phone, String password) {
+    public UsersModel(String name, String phone, String password) {
         this.name = name;
         this.phone = phone;
         this.password = password;

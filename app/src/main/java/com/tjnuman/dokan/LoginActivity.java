@@ -21,7 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.tjnuman.dokan.AdminClasses.AdminCatagoryActivity;
-import com.tjnuman.dokan.Model.Users;
+import com.tjnuman.dokan.Model.UsersModel;
+import com.tjnuman.dokan.Prevalent.Prevalent;
 import com.tjnuman.dokan.Prevalent.Sessions;
 
 public class LoginActivity extends AppCompatActivity {
@@ -126,7 +127,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(snapshot.child(parentDBname).child(phone).exists())
                 {
 
-                    Users userData = snapshot.child(parentDBname).child(phone).getValue(Users.class);
+                    UsersModel userData = snapshot.child(parentDBname).child(phone).getValue(UsersModel.class);
                     if(userData.getPhone().equals(phone)){
                         if(userData.getPassword().equals(password)){
                             if(parentDBname.equals("Admins")){
@@ -145,7 +146,8 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                                 Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
                                 progressbar.setVisibility(View.GONE);
-                                Intent intent = new Intent(LoginActivity.this,DashBoardActivity.class);
+                                Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+                                Prevalent.currentOnlineUser = userData;
                                 startActivity(intent);
                             }
 
