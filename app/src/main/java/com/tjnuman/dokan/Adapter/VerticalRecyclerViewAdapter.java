@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.tjnuman.dokan.Model.HorizontalModel;
 import com.tjnuman.dokan.Model.VerticalModel;
 import com.tjnuman.dokan.R;
@@ -38,9 +39,10 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
 
         VerticalModel verticalModel = verticalModelArrayList.get(position);
         String category = verticalModel.getCategory();
-        ArrayList<HorizontalModel> singleItem = verticalModel.getHorizontalArrayList();
+        //FirebaseRecyclerOptions<HorizontalModel> options = verticalModel.getOptions();
         holder.categoryTextView.setText(category);
-        HorizontalRecyclerViewAdapter horizontalRecyclerViewAdapter = new HorizontalRecyclerViewAdapter(context, singleItem);
+
+        HorizontalRecyclerViewAdapter horizontalRecyclerViewAdapter = new HorizontalRecyclerViewAdapter(context, verticalModel.getMyList());
 
         holder.recyclerView.setHasFixedSize(true);
         holder.recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false));
@@ -53,13 +55,13 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
         return verticalModelArrayList.size();
     }
 
-    public class VRVviewHolder extends RecyclerView.ViewHolder{
+    public static class VRVviewHolder extends RecyclerView.ViewHolder{
         TextView categoryTextView;
         RecyclerView recyclerView;
         public VRVviewHolder(@NonNull View itemView) {
             super(itemView);
             categoryTextView = itemView.findViewById(R.id.category);
-            recyclerView = itemView.findViewById(R.id.verticalrecyclerview);
+            recyclerView = itemView.findViewById(R.id.horizontalRecyclerview);
 
 
         }

@@ -1,12 +1,19 @@
 package com.tjnuman.dokan.Model;
 
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+
 import java.util.ArrayList;
 
 public class VerticalModel {
 
     String category;
-    ArrayList<HorizontalModel> HorizontalArrayList;
+    //FirebaseRecyclerOptions<HorizontalModel>Options;
+    ArrayList<HorizontalModel> myList;
 
+    public VerticalModel(String category, ArrayList<HorizontalModel> myList) {
+        this.category = category;
+        this.myList = myList;
+    }
 
     public String getCategory() {
         return category;
@@ -16,11 +23,11 @@ public class VerticalModel {
         this.category = category;
     }
 
-    public ArrayList<HorizontalModel> getHorizontalArrayList() {
-        return HorizontalArrayList;
+    public ArrayList<HorizontalModel> getMyList() {
+        return myList;
     }
 
-    public void setHorizontalArrayList(ArrayList<HorizontalModel> horizontalArrayList) {
-        HorizontalArrayList = horizontalArrayList;
+    public void setMyList(ArrayList<HorizontalModel> myList) {
+        this.myList = myList;
     }
 }

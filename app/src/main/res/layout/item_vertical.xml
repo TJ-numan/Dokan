@@ -17,13 +17,18 @@
         <TextView
             android:id="@+id/category"
             android:layout_width="wrap_content"
-            android:textColor="@color/black"
-            android:text="Category"
-            android:textSize="18dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true" />
+            android:text="Category"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            android:textSize="18dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@+id/category"
+            android:layout_marginTop="8dp"
+            android:id="@+id/horizontalRecyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

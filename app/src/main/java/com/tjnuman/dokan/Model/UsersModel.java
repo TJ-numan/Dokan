@@ -2,15 +2,18 @@ package com.tjnuman.dokan.Model;
 
 public class UsersModel {
 
-    private String name,phone,password;
+    private String name, phone, password, image, address;
 
     public UsersModel() {
+
     }
 
-    public UsersModel(String name, String phone, String password) {
+    public UsersModel(String name, String phone, String password, String image, String address) {
         this.name = name;
         this.phone = phone;
         this.password = password;
+        this.image = image;
+        this.address = address;
     }
 
     public String getName() {
@@ -35,5 +38,21 @@ public class UsersModel {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
