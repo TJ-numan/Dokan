@@ -1,6 +1,7 @@
 package com.tjnuman.dokan.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.tjnuman.dokan.HomeActivity;
 import com.tjnuman.dokan.Model.HorizontalModel;
+import com.tjnuman.dokan.ProductDetailActivity;
 import com.tjnuman.dokan.R;
 
 import java.util.ArrayList;
@@ -45,6 +48,15 @@ public class HorizontalRecyclerViewAdapter extends RecyclerView.Adapter<Horizont
         holder.name.setText(model.getPname());
         holder.price.setText(model.getPrice());
         Glide.with(holder.img.getContext()).load(model.getImage()).into(holder.img);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ProductDetailActivity.class);
+                intent.putExtra("pid", model.getPid());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

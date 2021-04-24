@@ -2,17 +2,26 @@ package com.tjnuman.dokan.Model;
 
 public class HorizontalModel {
 
-    String pname, price, description, image;
+    String pname, price, description, image,pid;
 
 
     public HorizontalModel() {
     }
 
-    public HorizontalModel(String pname, String price, String description, String image) {
+    public HorizontalModel(String pname, String price, String description, String image,String pid) {
         this.pname = pname;
         this.price = price;
         this.description = description;
         this.image = image;
+        this.pid = pid;
+    }
+
+    public String getPid() {
+        return pid;
+    }
+
+    public void setPid(String pid) {
+        this.pid = pid;
     }
 
     public String getImage() {

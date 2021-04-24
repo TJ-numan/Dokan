@@ -46,8 +46,8 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
 
         holder.recyclerView.setHasFixedSize(true);
         holder.recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false));
-
         holder.recyclerView.setAdapter(horizontalRecyclerViewAdapter);
+
     }
 
     @Override

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductDetailActivity">
+
+    <ImageView
+        android:id="@+id/detailproductimage"
+        android:layout_width="match_parent"
+        android:layout_height="222dp"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:src="@drawable/productimage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/prudctnameindetailpage"
+        android:layout_width="333dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:elevation="14dp"
+        android:backgroundTint="@color/black"
+        android:gravity="center"
+        android:hint="product name"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/detailproductimage"
+        app:layout_constraintTop_toBottomOf="@+id/detailproductimage" />
+
+    <TextView
+        android:id="@+id/prudctdetailindetailpage"
+        android:layout_width="335dp"
+        android:layout_height="117dp"
+        android:layout_marginTop="20dp"
+        android:hint="product detail"
+        android:padding="4dp"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/prudctnameindetailpage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/prudctnameindetailpage"
+        app:layout_constraintTop_toBottomOf="@+id/prudctnameindetailpage" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="145dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/prudctdetailindetailpage"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/prudctdetailindetailpage"
+        app:layout_constraintTop_toBottomOf="@+id/prudctdetailindetailpage">
+
+        <TextView
+            android:id="@+id/itemprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="450"
+            android:textColor="#509322"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text=" /-"
+            android:textColor="#509322"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+
+        android:id="@+id/quantity"
+        android:layout_width="255dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="20dp"
+        android:elevation="6dp"
+        android:gravity="center"
+        app:finalNumber="5"
+        app:initialNumber="1"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout6"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout6"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+        app:textSize="16dp" />
+
+    <Button
+        android:id="@+id/addtocart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="14dp"
+        android:text="add to card"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/quantity"
+        app:layout_constraintStart_toStartOf="@+id/quantity"
+        app:layout_constraintTop_toBottomOf="@+id/quantity"
+        app:layout_constraintVertical_bias="0.82" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,7 +37,7 @@
         android:layout_width="280dp"
         android:layout_height="53dp"
         android:layout_marginTop="190dp"
-        android:background="@drawable/buttonbaground"
+        android:background="@drawable/buttonbagroundsplash"
         android:text="Join Now"
         android:textColor="#FFAB4A"
         android:textSize="20dp"
@@ -52,7 +52,7 @@
         android:layout_width="330dp"
         android:layout_height="53dp"
         android:layout_marginTop="12dp"
-        android:background="@drawable/buttonbaground"
+        android:background="@drawable/buttonbagroundsplash"
         android:text="Already have an account?  Login"
         android:textAllCaps="false"
 

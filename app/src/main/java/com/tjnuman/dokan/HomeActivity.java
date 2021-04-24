@@ -145,8 +145,38 @@ public class HomeActivity extends AppCompatActivity {
         View headerView = navigationView.getHeaderView(0);
         TextView userName = headerView.findViewById(R.id.user_name);
         CircleImageView profilePic = headerView.findViewById(R.id.profile_image);
-      userName.setText(Prevalent.currentOnlineUser.getName());
-        Glide.with(profilePic).load(Prevalent.currentOnlineUser.getImage()).into(profilePic);
+
+        if(1==1){
+
+            DatabaseReference UsersRef = FirebaseDatabase.getInstance().getReference().child("Users").child(Prevalent.currentOnlineUser.getPhone());
+            UsersRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot)
+                {
+                    if (dataSnapshot.exists())
+                    {
+                        if (dataSnapshot.child("image").exists())
+                        {
+                            String image = dataSnapshot.child("image").getValue().toString();
+                            String name = dataSnapshot.child("name").getValue().toString();
+                            userName.setText(name);
+                            Glide.with(profilePic).load(image).into(profilePic);
+                        }
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }
+        else {
+            userName.setText(Prevalent.currentOnlineUser.getName());
+            Glide.with(profilePic).load(Prevalent.currentOnlineUser.getImage()).into(profilePic);
+        }
+
+
 
     }
 
@@ -182,8 +212,9 @@ public class HomeActivity extends AppCompatActivity {
                         String image = snp.child("image").getValue().toString();
                         String category = snp.child("category").getValue().toString();
                         String description = snp.child("description").getValue().toString();
+                        String pid = snp.child("pid").getValue().toString();
 
-                        HorizontalModel model = new HorizontalModel(name,price,description,image);
+                        HorizontalModel model = new HorizontalModel(name,price,description,image,pid);
                         horizontalList.add(model);
                         x++;
                         if (snapshot.getChildrenCount() == x){
@@ -215,8 +246,9 @@ public class HomeActivity extends AppCompatActivity {
                         String image = snp.child("image").getValue().toString();
                         String category = snp.child("category").getValue().toString();
                         String description = snp.child("description").getValue().toString();
+                        String pid = snp.child("pid").getValue().toString();
 
-                        HorizontalModel model2 = new HorizontalModel(name,price,description,image);
+                        HorizontalModel model2 = new HorizontalModel(name,price,description,image,pid);
                         horizontalList2.add(model2);
                         x++;
                         if (snapshot.getChildrenCount() == x){
@@ -248,8 +280,9 @@ public class HomeActivity extends AppCompatActivity {
                         String image = snp.child("image").getValue().toString();
                         String category = snp.child("category").getValue().toString();
                         String description = snp.child("description").getValue().toString();
+                        String pid = snp.child("pid").getValue().toString();
 
-                        HorizontalModel model3 = new HorizontalModel(name,price,description,image);
+                        HorizontalModel model3 = new HorizontalModel(name,price,description,image,pid);
                         horizontalList3.add(model3);
                         x++;
                         if (snapshot.getChildrenCount() == x){
@@ -282,7 +315,9 @@ public class HomeActivity extends AppCompatActivity {
                         String category = snp.child("category").getValue().toString();
                         String description = snp.child("description").getValue().toString();
 
-                        HorizontalModel model4 = new HorizontalModel(name,price,description,image);
+                        String pid = snp.child("pid").getValue().toString();
+
+                        HorizontalModel model4 = new HorizontalModel(name,price,description,image,pid);
                         horizontalList4.add(model4);
                         x++;
                         if (snapshot.getChildrenCount() == x){
@@ -314,8 +349,9 @@ public class HomeActivity extends AppCompatActivity {
                         String image = snp.child("image").getValue().toString();
                         String category = snp.child("category").getValue().toString();
                         String description = snp.child("description").getValue().toString();
+                        String pid = snp.child("pid").getValue().toString();
 
-                        HorizontalModel model5 = new HorizontalModel(name,price,description,image);
+                        HorizontalModel model5 = new HorizontalModel(name,price,description,image,pid);
                         horizontalList5.add(model5);
                         x++;
                         if (snapshot.getChildrenCount() == x){
@@ -347,8 +383,9 @@ public class HomeActivity extends AppCompatActivity {
                         String image = snp.child("image").getValue().toString();
                         String category = snp.child("category").getValue().toString();
                         String description = snp.child("description").getValue().toString();
+                        String pid = snp.child("pid").getValue().toString();
 
-                        HorizontalModel model6 = new HorizontalModel(name,price,description,image);
+                        HorizontalModel model6 = new HorizontalModel(name,price,description,image,pid);
                         horizontalList6.add(model6);
                         x++;
                         if (snapshot.getChildrenCount() == x){
@@ -380,8 +417,9 @@ public class HomeActivity extends AppCompatActivity {
                         String image = snp.child("image").getValue().toString();
                         String category = snp.child("category").getValue().toString();
                         String description = snp.child("description").getValue().toString();
+                        String pid = snp.child("pid").getValue().toString();
 
-                        HorizontalModel model7 = new HorizontalModel(name,price,description,image);
+                        HorizontalModel model7 = new HorizontalModel(name,price,description,image,pid);
                         horizontalList7.add(model7);
                         x++;
                         if (snapshot.getChildrenCount() == x){
@@ -413,8 +451,9 @@ public class HomeActivity extends AppCompatActivity {
                         String image = snp.child("image").getValue().toString();
                         String category = snp.child("category").getValue().toString();
                         String description = snp.child("description").getValue().toString();
+                        String pid = snp.child("pid").getValue().toString();
 
-                        HorizontalModel model8 = new HorizontalModel(name,price,description,image);
+                        HorizontalModel model8 = new HorizontalModel(name,price,description,image,pid);
                         horizontalList8.add(model8);
                         x++;
                         if (snapshot.getChildrenCount() == x){
@@ -446,8 +485,9 @@ public class HomeActivity extends AppCompatActivity {
                         String image = snp.child("image").getValue().toString();
                         String category = snp.child("category").getValue().toString();
                         String description = snp.child("description").getValue().toString();
+                        String pid = snp.child("pid").getValue().toString();
 
-                        HorizontalModel model9 = new HorizontalModel(name,price,description,image);
+                        HorizontalModel model9 = new HorizontalModel(name,price,description,image,pid);
                         horizontalList9.add(model9);
                         x++;
                         if (snapshot.getChildrenCount() == x){
@@ -479,8 +519,9 @@ public class HomeActivity extends AppCompatActivity {
                         String image = snp.child("image").getValue().toString();
                         String category = snp.child("category").getValue().toString();
                         String description = snp.child("description").getValue().toString();
+                        String pid = snp.child("pid").getValue().toString();
 
-                        HorizontalModel model10 = new HorizontalModel(name,price,description,image);
+                        HorizontalModel model10 = new HorizontalModel(name,price,description,image,pid);
                         horizontalList10.add(model10);
                         x++;
                         if (snapshot.getChildrenCount() == x){
@@ -512,8 +553,9 @@ public class HomeActivity extends AppCompatActivity {
                         String image = snp.child("image").getValue().toString();
                         String category = snp.child("category").getValue().toString();
                         String description = snp.child("description").getValue().toString();
+                        String pid = snp.child("pid").getValue().toString();
 
-                        HorizontalModel model11 = new HorizontalModel(name,price,description,image);
+                        HorizontalModel model11 = new HorizontalModel(name,price,description,image,pid);
                         horizontalList11.add(model11);
                         x++;
                         if (snapshot.getChildrenCount() == x){
@@ -545,8 +587,9 @@ public class HomeActivity extends AppCompatActivity {
                         String image = snp.child("image").getValue().toString();
                         String category = snp.child("category").getValue().toString();
                         String description = snp.child("description").getValue().toString();
+                        String pid = snp.child("pid").getValue().toString();
 
-                        HorizontalModel model12 = new HorizontalModel(name,price,description,image);
+                        HorizontalModel model12 = new HorizontalModel(name,price,description,image,pid);
                         horizontalList12.add(model12);
                         x++;
                         if (snapshot.getChildrenCount() == x){
@@ -578,8 +621,9 @@ public class HomeActivity extends AppCompatActivity {
                         String image = snp.child("image").getValue().toString();
                         String category = snp.child("category").getValue().toString();
                         String description = snp.child("description").getValue().toString();
+                        String pid = snp.child("pid").getValue().toString();
 
-                        HorizontalModel model13 = new HorizontalModel(name,price,description,image);
+                        HorizontalModel model13 = new HorizontalModel(name,price,description,image,pid);
                         horizontalList13.add(model13);
                         x++;
                         if (snapshot.getChildrenCount() == x){
@@ -612,7 +656,9 @@ public class HomeActivity extends AppCompatActivity {
                         String category = snp.child("category").getValue().toString();
                         String description = snp.child("description").getValue().toString();
 
-                        HorizontalModel model14 = new HorizontalModel(name,price,description,image);
+                        String pid = snp.child("pid").getValue().toString();
+
+                        HorizontalModel model14= new HorizontalModel(name,price,description,image,pid);
                         horizontalList14.add(model14);
                         x++;
                         if (snapshot.getChildrenCount() == x){
@@ -645,7 +691,9 @@ public class HomeActivity extends AppCompatActivity {
                         String category = snp.child("category").getValue().toString();
                         String description = snp.child("description").getValue().toString();
 
-                        HorizontalModel model15 = new HorizontalModel(name,price,description,image);
+                        String pid = snp.child("pid").getValue().toString();
+
+                        HorizontalModel model15 = new HorizontalModel(name,price,description,image,pid);
                         horizontalList15.add(model15);
                         x++;
                         if (snapshot.getChildrenCount() == x){
@@ -678,7 +726,9 @@ public class HomeActivity extends AppCompatActivity {
                         String category = snp.child("category").getValue().toString();
                         String description = snp.child("description").getValue().toString();
 
-                        HorizontalModel model16 = new HorizontalModel(name,price,description,image);
+                        String pid = snp.child("pid").getValue().toString();
+
+                        HorizontalModel model16 = new HorizontalModel(name,price,description,image,pid);
                         horizontalList16.add(model16);
                         x++;
                         if (snapshot.getChildrenCount() == x){
