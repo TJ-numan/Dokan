@@ -3,7 +3,9 @@ package com.tjnuman.dokan;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -12,6 +14,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -19,12 +23,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.tjnuman.dokan.Model.HorizontalModel;
+import com.tjnuman.dokan.Prevalent.Prevalent;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.HashMap;
 
 public class ProductDetailActivity extends AppCompatActivity {
     ImageView productImage;
     TextView productPrice,productDescription,productName;
     ElegantNumberButton elegantNumberButton;
-    String productID = "";
+    String productID = "",savedProductImage;
     Button addtocart;
 
     @Override
@@ -46,9 +55,65 @@ public class ProductDetailActivity extends AppCompatActivity {
         addtocart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ProductDetailActivity.this, "added to the cart", Toast.LENGTH_SHORT).show();
+                addtoCartList();
             }
         });
+
+    }
+
+    private void addtoCartList() {
+        String saveCurrentTime, saveCurrentDate;
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat currentDateFormat = new SimpleDateFormat("dd/mm/yyyy");
+        saveCurrentDate = currentDateFormat.format(c.getTime());
+        SimpleDateFormat currentTimeFormat = new SimpleDateFormat("hh:mm a");
+        saveCurrentTime = currentTimeFormat.format(c.getTime());
+
+
+
+        DatabaseReference cartListref = FirebaseDatabase.getInstance().getReference().child("Cart List");
+        final HashMap<String,Object> cartMap = new HashMap<>();
+        cartMap.put("pid",productID);
+        cartMap.put("pname",productName.getText().toString());
+        cartMap.put("price",productPrice.getText().toString());
+        cartMap.put("pimage",savedProductImage);
+        cartMap.put("date",saveCurrentDate);
+        cartMap.put("time",saveCurrentTime);
+        cartMap.put("quantity",elegantNumberButton.getNumber());
+        cartMap.put("discount","");
+
+        cartListref
+                .child("User View")
+                .child(Prevalent.currentOnlineUser.getPhone())
+                .child("Products")
+                .child(productID)
+                .updateChildren(cartMap)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                        if(task.isSuccessful()){
+                            cartListref
+                                    .child("Admin View")
+                                    .child(Prevalent.currentOnlineUser.getPhone())
+                                    .child("Products")
+                                    .child(productID)
+                                    .updateChildren(cartMap)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                         if(task.isSuccessful()){
+                                             Toast.makeText(ProductDetailActivity.this, "Added to the cart", Toast.LENGTH_SHORT).show();
+                                             Intent intent = new Intent(ProductDetailActivity.this,HomeActivity.class);
+                                             startActivity(intent);
+
+                                         }
+                                        }
+                                    });
+
+                        }
+                    }
+                });
 
     }
 
@@ -66,8 +131,10 @@ public class ProductDetailActivity extends AppCompatActivity {
                     productName.setText(products.getPname());
                     productPrice.setText(products.getPrice());
                     productDescription.setText(products.getDescription());
+                    savedProductImage = products.getImage();
 
-                    Glide.with(productImage).load(products.getImage()).into(productImage);
+
+                    Glide.with(productImage).load(savedProductImage).into(productImage);
                 }
             }
 

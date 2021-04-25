@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dokan"
         tools:replace="android:icon,android:theme">
-        <activity android:name=".ProductDetailActivity"></activity>
+        <activity android:name=".CartActivity"></activity>
+        <activity android:name=".ProductDetailActivity" />
         <activity android:name=".ProfileActivity" />
         <activity
             android:name=".HomeActivity"

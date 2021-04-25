@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/cartlistproductimage"
+        android:layout_width="94dp"
+        android:layout_height="101dp"
+        android:src="@drawable/laptop" />
+    <LinearLayout
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <TextView
+
+            android:id="@+id/cartlistproductname"
+            android:text="Product Name"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Price: "
+                android:textColor="@color/black"
+                android:textSize="17dp"
+
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/cartlistproductprice"
+                android:layout_width="wrap_content"
+                android:text="450"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:text="/-"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="quantity: "
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/cartlistquantity"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:text="3"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="6dp"
+            android:id="@+id/cartlistproductdate"
+            android:text="14/02/2021"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
