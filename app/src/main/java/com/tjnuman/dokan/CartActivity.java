@@ -6,8 +6,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,8 +30,9 @@ public class CartActivity extends AppCompatActivity {
     CartListRecyclerViewAdapter cartListAdapter;
     ArrayList<CartListModel> arrayList;
     TextView totalPrice;
+    int totalprice = 0,overalltotalprice=0;
     Button nextButton;
-    String singleItemPrice;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,8 @@ public class CartActivity extends AppCompatActivity {
         cartListAdapter = new CartListRecyclerViewAdapter(this,arrayList);
         recyclerView.setAdapter(cartListAdapter);
         getDataFromServer();
+
+
 
 
 
@@ -68,12 +73,18 @@ public class CartActivity extends AppCompatActivity {
                         String image = snp.child("pimage").getValue().toString();
                         String date = snp.child("date").getValue().toString();
                         String quantity = snp.child("quantity").getValue().toString();
+                        String pid = snp.child("pid").getValue().toString();
 
-                        singleItemPrice = price;
-                        CartListModel model = new CartListModel(name,date,image,price,quantity);
+                        totalprice =totalprice + (( Integer.valueOf(price))) * ( Integer.valueOf(quantity));
+                        totalPrice.setText(String.valueOf(totalprice));
+                        Log.d("TotalPrice",String.valueOf(totalprice));
+                        CartListModel model = new CartListModel(name,date,image,price,quantity,pid);
                         arrayList.add(model);
                         cartListAdapter.notifyDataSetChanged();
                     }
+                }
+                else {
+                    Toast.makeText(CartActivity.this, "There is no cart list", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -82,5 +93,7 @@ public class CartActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
 }

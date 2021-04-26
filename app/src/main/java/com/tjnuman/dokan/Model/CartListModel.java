@@ -1,18 +1,18 @@
 package com.tjnuman.dokan.Model;
 
 public class CartListModel {
-    String pname,date,pimage,price,qunatity;
+    String pname,date,pimage,price,qunatity,pid;
 
     public CartListModel() {
     }
 
-    public CartListModel(String pname, String date, String pimage, String price, String qunatity) {
-
+    public CartListModel(String pname, String date, String pimage, String price, String qunatity, String pid) {
         this.pname = pname;
         this.date = date;
         this.pimage = pimage;
         this.price = price;
         this.qunatity = qunatity;
+        this.pid = pid;
     }
 
     public String getPname() {
@@ -53,5 +53,13 @@ public class CartListModel {
 
     public void setQunatity(String qunatity) {
         this.qunatity = qunatity;
+    }
+
+    public String getPid() {
+        return pid;
+    }
+
+    public void setPid(String pid) {
+        this.pid = pid;
     }
 }
