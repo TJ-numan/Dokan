@@ -7,7 +7,7 @@
     android:id="@+id/mainwindow"
     android:background="@drawable/onlineopy"
     android:padding="10dp"
-    tools:context=".LoginActivity">
+    tools:context=".UserClasses.LoginActivity">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"

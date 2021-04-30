@@ -14,24 +14,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dokan"
         tools:replace="android:icon,android:theme">
-        <activity android:name=".CartActivity"></activity>
-        <activity android:name=".ProductDetailActivity" />
-        <activity android:name=".ProfileActivity" />
+        <activity android:name=".UserClasses.AllProductFromCatagory"></activity>
+        <activity android:name=".UserClasses.ConfirmActivity" />
+        <activity android:name=".UserClasses.PaymentActivity" />
+        <activity android:name=".UserClasses.CartActivity" />
+        <activity android:name=".UserClasses.ProductDetailActivity" />
+        <activity android:name=".UserClasses.ProfileActivity" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".UserClasses.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.Dokan.NoActionBar" />
-        <activity android:name=".ClothingActivity" />
+        <activity android:name=".AdminClasses.CatagoryProductActivity" />
         <activity android:name=".AdminClasses.AdminAddNewProductActivity" />
         <activity android:name=".AdminClasses.AdminCatagoryActivity" />
         <activity
-            android:name=".DashBoardActivity"
+            android:name=".UserClasses.DashBoardActivity"
             android:label="@string/title_activity_dash_board"
             android:theme="@style/Theme.Dokan.NoActionBar" />
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".UserClasses.SignupActivity" />
+        <activity android:name=".UserClasses.LoginActivity" />
+        <activity android:name=".UserClasses.MainActivity" />
+        <activity android:name=".UserClasses.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

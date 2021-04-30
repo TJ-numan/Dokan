@@ -3,31 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:padding="8dp"
+    android:padding="5dp"
     android:layout_height="match_parent"
-    tools:context=".AdminClasses.CatagoryProductActivity">
+    tools:context=".UserClasses.AllProductFromCatagory">
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/allproductcatagory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Catagory"
+        android:text="Catagory name"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.003"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="666dp"
-        android:padding="5dp"
+        android:id="@+id/allproductrecyclerview"
+        android:layout_width="383dp"
+        android:layout_height="670dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/allproductcatagory" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,7 @@
     android:padding="10dp"
     android:layout_height="match_parent"
     android:background="@drawable/onlineopy"
-    tools:context=".SignupActivity">
+    tools:context=".UserClasses.SignupActivity">
 
 
     <com.airbnb.lottie.LottieAnimationView

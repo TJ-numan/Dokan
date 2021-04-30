@@ -25,16 +25,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.tjnuman.dokan.ClothingActivity;
 import com.tjnuman.dokan.R;
 
-import java.sql.Date;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
-import java.util.Locale;
-import java.util.TimeZone;
 
 public class AdminAddNewProductActivity extends AppCompatActivity {
     String CatagoryName, pdescription,pname,pprice, savecurrentdate, savecurrenttime,productRandomKey, downloadImageUrl;
@@ -181,7 +176,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
 
                             Toast.makeText(AdminAddNewProductActivity.this, "Product added successfully", Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(AdminAddNewProductActivity.this, ClothingActivity.class);
+                            Intent intent = new Intent(AdminAddNewProductActivity.this, CatagoryProductActivity.class);
                             startActivity(intent);
                             loadingbar.setVisibility(View.GONE);
                         }
