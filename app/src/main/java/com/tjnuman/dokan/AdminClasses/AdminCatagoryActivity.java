@@ -12,6 +12,7 @@ import com.tjnuman.dokan.R;
 public class AdminCatagoryActivity extends AppCompatActivity {
     ImageView clotthings,household,gadget,jewellery,medicine,grocery,
             bikes,properties,sports,smartphone,pets,electronics,laptops,cars,tickets,others;
+    String parendb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +34,15 @@ public class AdminCatagoryActivity extends AppCompatActivity {
         cars = findViewById(R.id.cars);
         tickets = findViewById(R.id.tickets);
         others = findViewById(R.id.others);
+        parendb = getIntent().getStringExtra("ParentDB");
 
 
         clotthings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminCatagoryActivity.this,AdminAddNewProductActivity.class);
-                Bundle data1 = new Bundle();
-                data1.putString("Catagory","Clothing ");
-                intent.putExtras(data1);
+                intent.putExtra("Catagory","Clothing ");
+                intent.putExtra("ParentDB",parendb);
                 startActivity(intent);
             }
         });
@@ -50,9 +51,8 @@ public class AdminCatagoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminCatagoryActivity.this,AdminAddNewProductActivity.class);
-                Bundle data1 = new Bundle();
-                data1.putString("Catagory","Household");
-                intent.putExtras(data1);
+                intent.putExtra("Catagory","Clothing ");
+                intent.putExtra("ParentDB",parendb);
                 startActivity(intent);
             }
         });
@@ -61,9 +61,8 @@ public class AdminCatagoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminCatagoryActivity.this,AdminAddNewProductActivity.class);
-                Bundle data1 = new Bundle();
-                data1.putString("Catagory","Gadgets");
-                intent.putExtras(data1);
+                intent.putExtra("Catagory","Clothing ");
+                intent.putExtra("ParentDB",parendb);
                 startActivity(intent);
             }
         });
@@ -72,9 +71,8 @@ public class AdminCatagoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminCatagoryActivity.this,AdminAddNewProductActivity.class);
-                Bundle data1 = new Bundle();
-                data1.putString("Catagory","jewellery");
-                intent.putExtras(data1);
+                intent.putExtra("Catagory","Clothing ");
+                intent.putExtra("ParentDB",parendb);
                 startActivity(intent);
             }
         });
@@ -83,9 +81,8 @@ public class AdminCatagoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminCatagoryActivity.this,AdminAddNewProductActivity.class);
-                Bundle data1 = new Bundle();
-                data1.putString("Catagory","Medicine");
-                intent.putExtras(data1);
+                intent.putExtra("Catagory","Clothing ");
+                intent.putExtra("ParentDB",parendb);
                 startActivity(intent);
             }
         });
@@ -94,9 +91,8 @@ public class AdminCatagoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminCatagoryActivity.this,AdminAddNewProductActivity.class);
-                Bundle data1 = new Bundle();
-                data1.putString("Catagory","Grocery");
-                intent.putExtras(data1);
+                intent.putExtra("Catagory","Clothing ");
+                intent.putExtra("ParentDB",parendb);
                 startActivity(intent);
             }
         });
@@ -105,9 +101,8 @@ public class AdminCatagoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminCatagoryActivity.this,AdminAddNewProductActivity.class);
-                Bundle data1 = new Bundle();
-                data1.putString("Catagory","Bikes");
-                intent.putExtras(data1);
+                intent.putExtra("Catagory","Clothing ");
+                intent.putExtra("ParentDB",parendb);
                 startActivity(intent);
             }
         });
@@ -116,9 +111,8 @@ public class AdminCatagoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminCatagoryActivity.this,AdminAddNewProductActivity.class);
-                Bundle data1 = new Bundle();
-                data1.putString("Catagory","Properties");
-                intent.putExtras(data1);
+                intent.putExtra("Catagory","Clothing ");
+                intent.putExtra("ParentDB",parendb);
                 startActivity(intent);
             }
         });
@@ -127,9 +121,8 @@ public class AdminCatagoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminCatagoryActivity.this,AdminAddNewProductActivity.class);
-                Bundle data1 = new Bundle();
-                data1.putString("Catagory","Sports");
-                intent.putExtras(data1);
+                intent.putExtra("Catagory","Clothing ");
+                intent.putExtra("ParentDB",parendb);
                 startActivity(intent);
             }
         });
@@ -138,9 +131,8 @@ public class AdminCatagoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminCatagoryActivity.this,AdminAddNewProductActivity.class);
-                Bundle data1 = new Bundle();
-                data1.putString("Catagory","Smartphones");
-                intent.putExtras(data1);
+                intent.putExtra("Catagory","Clothing ");
+                intent.putExtra("ParentDB",parendb);
                 startActivity(intent);
             }
         });
@@ -148,9 +140,8 @@ public class AdminCatagoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminCatagoryActivity.this,AdminAddNewProductActivity.class);
-                Bundle data1 = new Bundle();
-                data1.putString("Catagory","Pets");
-                intent.putExtras(data1);
+                intent.putExtra("Catagory","Clothing ");
+                intent.putExtra("ParentDB",parendb);
                 startActivity(intent);
             }
         });
@@ -158,9 +149,8 @@ public class AdminCatagoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminCatagoryActivity.this,AdminAddNewProductActivity.class);
-                Bundle data1 = new Bundle();
-                data1.putString("Catagory","Electronics");
-                intent.putExtras(data1);
+                intent.putExtra("Catagory","Clothing ");
+                intent.putExtra("ParentDB",parendb);
                 startActivity(intent);
             }
         });
@@ -168,9 +158,8 @@ public class AdminCatagoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminCatagoryActivity.this,AdminAddNewProductActivity.class);
-                Bundle data1 = new Bundle();
-                data1.putString("Catagory","Laptops");
-                intent.putExtras(data1);
+                intent.putExtra("Catagory","Clothing ");
+                intent.putExtra("ParentDB",parendb);
                 startActivity(intent);
             }
         });
@@ -180,9 +169,8 @@ public class AdminCatagoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminCatagoryActivity.this,AdminAddNewProductActivity.class);
-                Bundle data1 = new Bundle();
-                data1.putString("Catagory","Cars");
-                intent.putExtras(data1);
+                intent.putExtra("Catagory","Clothing ");
+                intent.putExtra("ParentDB",parendb);
                 startActivity(intent);
             }
         });
@@ -190,9 +178,8 @@ public class AdminCatagoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminCatagoryActivity.this,AdminAddNewProductActivity.class);
-                Bundle data1 = new Bundle();
-                data1.putString("Catagory","Tickets");
-                intent.putExtras(data1);
+                intent.putExtra("Catagory","Clothing ");
+                intent.putExtra("ParentDB",parendb);
                 startActivity(intent);
             }
         });
@@ -200,9 +187,8 @@ public class AdminCatagoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminCatagoryActivity.this,AdminAddNewProductActivity.class);
-                Bundle data1 = new Bundle();
-                data1.putString("Catagory","Others");
-                intent.putExtras(data1);
+                intent.putExtra("Catagory","Clothing ");
+                intent.putExtra("ParentDB",parendb);
                 startActivity(intent);
             }
         });

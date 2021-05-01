@@ -57,7 +57,7 @@ public class CartListRecyclerViewAdapter extends RecyclerView.Adapter<CartListRe
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("ClickListener:", "Item clicked");
+
                 CharSequence options[] = new CharSequence[]{
                         "Edit",
                         "Remove"

@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.tjnuman.dokan.AdminClasses.DashBoardActivity;
 import com.tjnuman.dokan.R;
 
 import java.util.HashMap;
@@ -127,7 +128,7 @@ public class SignupActivity extends AppCompatActivity {
                                         userName.setEnabled(true);
                                         userPassword.setEnabled(true);
                                         userPhone.setEnabled(true);
-                                        Intent intent = new Intent(SignupActivity.this,DashBoardActivity.class);
+                                        Intent intent = new Intent(SignupActivity.this, DashBoardActivity.class);
                                         startActivity(intent);
                                         finish();
                                     }

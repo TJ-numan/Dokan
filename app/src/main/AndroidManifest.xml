@@ -27,8 +27,9 @@
         <activity android:name=".AdminClasses.CatagoryProductActivity" />
         <activity android:name=".AdminClasses.AdminAddNewProductActivity" />
         <activity android:name=".AdminClasses.AdminCatagoryActivity" />
+        <activity android:name=".AdminClasses.AllOrderActivity" />
         <activity
-            android:name=".UserClasses.DashBoardActivity"
+            android:name=".AdminClasses.DashBoardActivity"
             android:label="@string/title_activity_dash_board"
             android:theme="@style/Theme.Dokan.NoActionBar" />
         <activity android:name=".UserClasses.SignupActivity" />
@@ -37,7 +38,6 @@
         <activity android:name=".UserClasses.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

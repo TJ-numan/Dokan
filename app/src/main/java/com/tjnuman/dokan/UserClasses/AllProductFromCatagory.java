@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.GridLayout;
@@ -18,6 +19,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.tjnuman.dokan.AdminClasses.AllOrderActivity;
+import com.tjnuman.dokan.AdminClasses.CatagoryProductActivity;
+import com.tjnuman.dokan.AdminClasses.MyClickListener;
 import com.tjnuman.dokan.R;
 import com.tjnuman.dokan.UserClasses.Adapter.CartListRecyclerViewAdapter;
 import com.tjnuman.dokan.UserClasses.Adapter.ProductCategoryAdapter;
@@ -31,7 +35,7 @@ import java.util.ArrayList;
 public class AllProductFromCatagory extends AppCompatActivity {
     TextView catagory;
 
-    String catagorysaved;
+    String catagorysaved,parentDB;
 
     RecyclerView recyclerView;
      ProductCategoryAdapter productCategoryAdapter;
@@ -40,17 +44,35 @@ public class AllProductFromCatagory extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_all_product_from_catagory);
         catagory = findViewById(R.id.allproductcatagory);
         catagorysaved = getIntent().getStringExtra("Catagory");
+        parentDB = getIntent().getStringExtra("ParentDB");
         recyclerView = findViewById(R.id.allproductrecyclerview);
         arrayList = new ArrayList<>();
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this,3, GridLayoutManager.VERTICAL,false));
-        productCategoryAdapter = new ProductCategoryAdapter(this,arrayList);
+        productCategoryAdapter = new ProductCategoryAdapter(this, arrayList, new MyClickListener() {
+            @Override
+            public void onClickListener(int position) {
+
+                if (parentDB.equals("Admins")){
+                    Intent intent = new Intent(AllProductFromCatagory.this, AllOrderActivity.class);
+                    intent.putExtra("pid", arrayList.get(position).getPid());
+                    startActivity(intent);
+
+                }else if (parentDB.equals("Users")){
+                    Intent intent = new Intent(AllProductFromCatagory.this, ProductDetailActivity.class);
+                    intent.putExtra("pid", arrayList.get(position).getPid());
+                    startActivity(intent);
+                }
+            }
+        });
         recyclerView.setAdapter(productCategoryAdapter);
         getDataFromServer();
         catagory.setText(catagorysaved);
+        parentDB = getIntent().getStringExtra("ParentDB");
 
     }
 

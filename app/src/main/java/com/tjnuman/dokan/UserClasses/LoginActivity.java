@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.tjnuman.dokan.AdminClasses.AdminCatagoryActivity;
+import com.tjnuman.dokan.AdminClasses.DashBoardActivity;
 import com.tjnuman.dokan.UserClasses.Model.UsersModel;
 import com.tjnuman.dokan.UserClasses.Prevalent.Prevalent;
 import com.tjnuman.dokan.UserClasses.Prevalent.Sessions;
@@ -137,7 +138,8 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                                 Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
                                 progressbar.setVisibility(View.GONE);
-                                Intent intent = new Intent(LoginActivity.this, AdminCatagoryActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, DashBoardActivity.class);
+                                intent.putExtra("ParentDB",parentDBname);
                                 startActivity(intent);
 
                             }

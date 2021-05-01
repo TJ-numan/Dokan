@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.tjnuman.dokan.AdminClasses.MyClickListener;
 import com.tjnuman.dokan.R;
 import com.tjnuman.dokan.UserClasses.Model.ProductCategoryModel;
 import com.tjnuman.dokan.UserClasses.ProductDetailActivity;
@@ -22,10 +23,12 @@ public class ProductCategoryAdapter extends RecyclerView.Adapter<ProductCategory
 
     Context context;
     ArrayList<ProductCategoryModel> list;
+    MyClickListener myClickListener;
 
-    public ProductCategoryAdapter(Context context, ArrayList<ProductCategoryModel> list) {
+    public ProductCategoryAdapter(Context context, ArrayList<ProductCategoryModel> list,MyClickListener myClickListener) {
         this.context = context;
         this.list = list;
+        this.myClickListener = myClickListener;
     }
 
     @NonNull
@@ -44,9 +47,8 @@ public class ProductCategoryAdapter extends RecyclerView.Adapter<ProductCategory
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ProductDetailActivity.class);
-                intent.putExtra("pid", model.getPid());
-                context.startActivity(intent);
+
+                myClickListener.onClickListener(position);
             }
         });
 

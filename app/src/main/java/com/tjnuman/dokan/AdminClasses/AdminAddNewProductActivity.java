@@ -26,6 +26,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.tjnuman.dokan.R;
+import com.tjnuman.dokan.UserClasses.AllProductFromCatagory;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -41,6 +42,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
     LottieAnimationView loadingbar;
     StorageReference productImageref;
     DatabaseReference ProductsRef;
+    String parentDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         productName = findViewById(R.id.productname);
         getProductDescription = findViewById(R.id.productdescription);
         productPrice = findViewById(R.id.productprice);
+        parentDB = getIntent().getStringExtra("ParentDB");
 
         addNewProductimage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -176,7 +179,9 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
 
                             Toast.makeText(AdminAddNewProductActivity.this, "Product added successfully", Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(AdminAddNewProductActivity.this, CatagoryProductActivity.class);
+                            Intent intent = new Intent(AdminAddNewProductActivity.this, AllProductFromCatagory.class);
+                            intent.putExtra("Catagory",CatagoryName);
+                            intent.putExtra("ParentDB",parentDB);
                             startActivity(intent);
                             loadingbar.setVisibility(View.GONE);
                         }

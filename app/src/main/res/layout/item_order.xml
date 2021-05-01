@@ -98,87 +98,19 @@
             app:layout_constraintTop_toTopOf="@+id/textView12"
             app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="8dp"
-            android:text="Total amount:"
-            android:textColor="@color/white"
-            android:textSize="17dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-        <TextView
-            android:id="@+id/orderprice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:text="14500"
-            android:textColor="@color/white"
-
-            android:textSize="17dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView14"
-            app:layout_constraintStart_toEndOf="@+id/textView14"
-            app:layout_constraintTop_toTopOf="@+id/textView14" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
-
-            android:text="/-"
-            android:textColor="@color/white"
-            android:textSize="17dp"
-            app:layout_constraintBottom_toBottomOf="@+id/orderprice"
-            app:layout_constraintStart_toEndOf="@+id/orderprice"
-            app:layout_constraintTop_toTopOf="@+id/orderprice"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="8dp"
-            android:text="Order at:"
-            android:textColor="@color/white"
-            android:textSize="17dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView14" />
-
-        <TextView
-            android:id="@+id/orderdate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:text="23 jan 2019"
-            android:textColor="@color/white"
-            android:textSize="17dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView16"
-            app:layout_constraintStart_toEndOf="@+id/textView16"
-            app:layout_constraintTop_toTopOf="@+id/textView16" />
 
         <Button
             android:id="@+id/orderbutton"
             android:layout_width="match_parent"
             android:layout_height="47dp"
-            android:textColor="@color/white"
-            android:layout_marginTop="176dp"
+            android:layout_marginTop="116dp"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:text="Show the orders from this Custommer"
             android:textAllCaps="false"
+            android:textColor="@color/white"
             android:textSize="18dp"
-            android:backgroundTint="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.408"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
