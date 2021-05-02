@@ -48,7 +48,7 @@ public class ProductCategoryAdapter extends RecyclerView.Adapter<ProductCategory
             @Override
             public void onClick(View v) {
 
-                myClickListener.onClickListener(position);
+                myClickListener.onClickListener(position, model.getPid());
             }
         });
 

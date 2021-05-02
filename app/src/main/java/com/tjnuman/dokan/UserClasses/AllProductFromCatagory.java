@@ -61,7 +61,7 @@ public class AllProductFromCatagory extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this,3, GridLayoutManager.VERTICAL,false));
         productCategoryAdapter = new ProductCategoryAdapter(this, arrayList, new MyClickListener() {
             @Override
-            public void onClickListener(int position) {
+            public void onClickListener(int position, String pid) {
 
                 if (parentDB.equals("Admins")){
                     CharSequence options[] = new CharSequence[]{
@@ -69,7 +69,7 @@ public class AllProductFromCatagory extends AppCompatActivity {
                             "Remove"
                     };
                     AlertDialog.Builder builder = new AlertDialog.Builder(AllProductFromCatagory.this);
-                    builder.setTitle("Cart Option:");
+                    builder.setTitle("Product Option:");
                     builder.setItems(options, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int i) {
@@ -83,7 +83,7 @@ public class AllProductFromCatagory extends AppCompatActivity {
                                 DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
 
                                 rootRef.child("Products")
-                                        .child(model.getPid())
+                                        .child(pid)
                                         .removeValue()
                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
