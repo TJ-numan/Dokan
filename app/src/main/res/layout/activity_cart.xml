@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/onlineopy"
     tools:context=".UserClasses.CartActivity">
 
 
@@ -16,7 +17,7 @@
         android:padding="4dp"
         android:paddingLeft="8dp"
         android:text="Total Price = "
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,8 +28,7 @@
         android:layout_height="37dp"
         android:padding="4dp"
         android:paddingLeft="8dp"
-
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,6 +52,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="312dp"
         android:text="@string/next"
+        android:textColor="@color/white"
+        android:background="@drawable/buttonbagroundsplash"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerViewcart"
         app:layout_constraintVertical_bias="1.0"

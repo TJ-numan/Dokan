@@ -4,41 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/onlineopy"
+    android:background="@drawable/adminbg"
     tools:context=".AdminClasses.DashBoardActivity">
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="this is the dash board"
+        android:fontFamily="@font/allerta_stencil"
+        android:text="dash board"
         android:textColor="@color/white"
-        android:textSize="23dp"
+        android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Button
         android:id="@+id/uploadProducts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="146dp"
+        android:layout_width="214dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="136dp"
+        android:backgroundTint="#ef6d7a"
         android:text="upload new product"
+        android:textColor="#f8e4c8"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <Button
         android:id="@+id/orderfromallcustomer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_width="214dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="128dp"
+        android:backgroundTint="#0593fc"
         android:text="Customer list"
+        android:textColor="#FBD825"
+        app:layout_constraintEnd_toEndOf="@+id/manageallproduct"
+        app:layout_constraintTop_toBottomOf="@+id/manageallproduct" />
+
+    <Button
+        android:id="@+id/manageallproduct"
+        android:layout_width="214dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="124dp"
+        android:backgroundTint="#ffda44"
+        android:text="manage all products"
+        android:textColor="#496602"
         app:layout_constraintEnd_toEndOf="@+id/uploadProducts"
-        app:layout_constraintTop_toBottomOf="@+id/uploadProducts" />
+        app:layout_constraintTop_toBottomOf="@+id/uploadProducts"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="64dp"
+        android:layout_height="58dp"
+        android:src="@drawable/customer"
+        app:layout_constraintBottom_toBottomOf="@+id/orderfromallcustomer"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/orderfromallcustomer" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="64dp"
+        android:layout_height="58dp"
+        android:src="@drawable/bill"
+        app:layout_constraintBottom_toBottomOf="@+id/manageallproduct"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/manageallproduct" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="64dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:src="@drawable/newproduct"
+        app:layout_constraintBottom_toBottomOf="@+id/uploadProducts"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/uploadProducts" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

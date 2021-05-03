@@ -100,7 +100,7 @@ public class AllProductFromCatagory extends AppCompatActivity {
                     });
                     builder.show();
 
-                }else if (parentDB.equals("Users")){
+                }else{
                     Intent intent = new Intent(AllProductFromCatagory.this, ProductDetailActivity.class);
                     intent.putExtra("pid", arrayList.get(position).getPid());
                     startActivity(intent);

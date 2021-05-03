@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/onlineopy"
     android:layout_height="match_parent"
     tools:context=".AdminClasses.AllOrderActivity">
 
@@ -13,7 +14,7 @@
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="All order from users"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

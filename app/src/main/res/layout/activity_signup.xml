@@ -160,6 +160,7 @@
         android:background="@drawable/buttonbaground2"
         android:text="Signup"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

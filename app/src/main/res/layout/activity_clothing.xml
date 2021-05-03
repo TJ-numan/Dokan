@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:padding="8dp"
     android:layout_height="match_parent"
+    android:padding="8dp"
     tools:context=".AdminClasses.CatagoryProductActivity">
 
     <TextView
@@ -14,20 +14,419 @@
         android:layout_marginTop="4dp"
         android:text="Catagory"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.003"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="666dp"
-        android:padding="5dp"
+        android:layout_height="683dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintVertical_bias="0.315"
+        tools:layout_editor_absoluteX="-6dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="49dp">
+
+            <LinearLayout
+                android:id="@+id/clothingadmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="50dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/clothing" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Clothing"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/householdadmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="50dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/household" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Household"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gadgetsadmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="50dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/gadget" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+
+                    android:text="Gadgets"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/jewelleryadmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="50dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/earrings" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Jewellery"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="50dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/medicine" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Medicine"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="50dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/diet" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Grocery"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="50dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/motorbike" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Bikes"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="50dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/home" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Properties"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="50dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/sport" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Sports"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="50dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/smartphone" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Smartphone"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="50dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/pet" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Pets"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="50dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/electronics" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Electronics"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="50dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/laptop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Laptops"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="50dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/car" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Cars"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="50dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/transportation" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Tickets"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="50dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/box" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:text="Others"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

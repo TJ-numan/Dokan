@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DashBoardActivity extends AppCompatActivity {
 
-    Button allcatagory,customerlist;
+    Button allcatagory,customerlist,allproudct;
     String parentDB;
 
 
@@ -22,7 +22,17 @@ public class DashBoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dash_board);
         allcatagory = findViewById(R.id.uploadProducts);
         customerlist = findViewById(R.id.orderfromallcustomer);
+        allproudct = findViewById(R.id.manageallproduct);
         parentDB = getIntent().getStringExtra("ParentDB");
+
+        allproudct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DashBoardActivity.this,CatagoryProductActivity.class);
+                intent.putExtra("ParentDB",parentDB);
+                startActivity(intent);
+            }
+        });
 
 
         allcatagory.setOnClickListener(new View.OnClickListener() {

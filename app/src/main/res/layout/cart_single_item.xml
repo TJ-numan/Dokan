@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="5dp"
+    android:padding="4dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/cartlistproductimage"
@@ -87,5 +93,6 @@
 
 
     </LinearLayout>
+    </LinearLayout>
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/adminbg"
     android:layout_height="match_parent"
     tools:context=".AdminClasses.AdminCatagoryActivity">
 
@@ -13,7 +14,7 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/allerta_stencil"
         android:text="Add New Products"
-        android:textColor="#169C97"
+        android:textColor="#EEF1F1"
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

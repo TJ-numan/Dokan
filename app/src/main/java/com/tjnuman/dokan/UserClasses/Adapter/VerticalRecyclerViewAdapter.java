@@ -55,6 +55,7 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
 
                 Intent intent = new Intent(context, AllProductFromCatagory.class);
                 intent.putExtra("Catagory",category);
+                intent.putExtra("ParentDB","Users");
                 context.startActivity(intent);
             }
         });

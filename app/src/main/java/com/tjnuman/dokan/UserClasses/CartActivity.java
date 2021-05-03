@@ -34,6 +34,7 @@ public class CartActivity extends AppCompatActivity {
     TextView totalPrice;
     int totalprice = 0;
     Button nextButton;
+    String AdminorUser,userPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,17 @@ public class CartActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
         cartListAdapter = new CartListRecyclerViewAdapter(this,arrayList);
         recyclerView.setAdapter(cartListAdapter);
+
+
+        AdminorUser = getIntent().getStringExtra("AdminorUser");
+
+        if(AdminorUser.equals("Admin")){
+            userPhone = getIntent().getStringExtra("UserPhone");
+        }
+        else {
+            userPhone = Prevalent.currentOnlineUser.getPhone();
+        }
+
         getDataFromServer();
 
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -57,21 +69,13 @@ public class CartActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
-
-
     }
 
     private void getDataFromServer() {
 
 
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-        Query query = rootRef.child("Cart List").child("User View").child(Prevalent.currentOnlineUser.getPhone()).child("Products");
+        Query query = rootRef.child("Cart List").child("User View").child(userPhone).child("Products");
 
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

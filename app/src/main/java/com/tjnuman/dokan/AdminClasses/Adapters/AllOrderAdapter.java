@@ -1,6 +1,7 @@
 package com.tjnuman.dokan.AdminClasses.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.tjnuman.dokan.AdminClasses.Models.AllOrderModel;
 import com.tjnuman.dokan.R;
+import com.tjnuman.dokan.UserClasses.CartActivity;
+import com.tjnuman.dokan.UserClasses.HomeActivity;
 
 import java.util.ArrayList;
 
@@ -41,7 +44,10 @@ public class AllOrderAdapter extends RecyclerView.Adapter<AllOrderAdapter.myView
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //goto this customers order list
+                Intent intent = new Intent(context, CartActivity.class);
+                intent.putExtra("AdminorUser","Admin");
+                intent.putExtra("UserPhone",model.getPhone());
+                context.startActivity(intent);
             }
         });
 

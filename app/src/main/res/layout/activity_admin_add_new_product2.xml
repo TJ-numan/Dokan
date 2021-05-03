@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/adminbg"
     tools:context=".AdminClasses.AdminAddNewProductActivity">
 
     <ImageView
@@ -64,9 +65,9 @@
 
     <Button
         android:id="@+id/addbtn"
-        android:layout_width="122dp"
-        android:layout_height="60dp"
-        android:background="@drawable/buttonbagroundadmin"
+        android:layout_width="212dp"
+        android:layout_height="64dp"
+        android:background="@drawable/buttonbagroundsplash"
         android:gravity="center"
         android:text="Add Product"
         android:textColor="@color/white"

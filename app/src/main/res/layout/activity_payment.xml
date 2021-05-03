@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/onlineopy"
+    android:padding="10dp"
     tools:context=".UserClasses.PaymentActivity">
 
     <TextView
@@ -11,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="Payment mathood"
-        android:textColor="@color/black"
+
+        android:textColor="#FFEB3B"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,6 +66,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="next"
+        android:textColor="@color/white"
+        android:background="@drawable/buttonbagroundsplash"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
         app:layout_constraintVertical_bias="0.866"
