@@ -86,6 +86,7 @@ public class HomeActivity extends AppCompatActivity {
         toolbar.setTitle("Home");
         setSupportActionBar(toolbar);
 
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(HomeActivity.this,drawer,toolbar,R.string.open,R.string.close);
         drawer.addDrawerListener(toggle);
@@ -104,6 +105,7 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.nav_cart:
                         Toast.makeText(HomeActivity.this, "cart is selected", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(HomeActivity.this,CartActivity.class);
+                        intent.putExtra("AdminorUser", "User");
                         startActivity(intent);
                         return true;
                     case R.id.nav_category:

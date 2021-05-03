@@ -34,7 +34,7 @@ public class CartActivity extends AppCompatActivity {
     TextView totalPrice;
     int totalprice = 0;
     Button nextButton;
-    String AdminorUser,userPhone;
+    String AdminorUser = "User",userPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
