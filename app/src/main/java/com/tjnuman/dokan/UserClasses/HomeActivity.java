@@ -18,6 +18,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.tjnuman.dokan.AdminClasses.AdminCatagoryActivity;
+import com.tjnuman.dokan.AdminClasses.CatagoryProductActivity;
 import com.tjnuman.dokan.UserClasses.Adapter.VerticalRecyclerViewAdapter;
 import com.tjnuman.dokan.UserClasses.Model.HorizontalModel;
 import com.tjnuman.dokan.UserClasses.Model.VerticalModel;
@@ -107,20 +109,21 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(new Intent(HomeActivity.this, SplashActivity.class));
                         finish();
                         return true;
-                    case R.id.order:
-                        Toast.makeText(HomeActivity.this, "order is selected", Toast.LENGTH_SHORT).show();
-                        return true;
                     case R.id.nav_cart:
                         Toast.makeText(HomeActivity.this, "cart is selected", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(HomeActivity.this,CartActivity.class);
+                        startActivity(intent);
                         return true;
                     case R.id.nav_category:
                         Toast.makeText(HomeActivity.this, "category is selected", Toast.LENGTH_SHORT).show();
+                        Intent intent3 = new Intent(HomeActivity.this, CatagoryProductActivity.class);
+                        startActivity(intent3);
                         return true;
 
                     case R.id.profile:
                         Toast.makeText(HomeActivity.this, "Profile is selected", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(HomeActivity.this,ProfileActivity.class);
-                        startActivity(intent);
+                        Intent intent2 = new Intent(HomeActivity.this,ProfileActivity.class);
+                        startActivity(intent2);
                         return true;
                     default:
                         Toast.makeText(HomeActivity.this, "Nothing is selected", Toast.LENGTH_SHORT).show();

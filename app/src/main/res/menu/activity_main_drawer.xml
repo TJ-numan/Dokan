@@ -8,10 +8,7 @@
             android:id="@+id/nav_cart"
             android:icon="@drawable/cart"
             android:title="Cart" />
-        <item
-            android:id="@+id/order"
-            android:icon="@drawable/order"
-            android:title="Order" />
+    
         <item
             android:id="@+id/nav_category"
             android:icon="@drawable/category"
