@@ -1,3 +1,14 @@
+
+
+![Screenshot_2021-05-04-02-00-32-622_com tjnuman dokan](https://user-images.githubusercontent.com/34963162/116926824-accd7400-ac7c-11eb-94db-bc6cc1df8032.jpg)
+![Screenshot_2021-05-04-01-31-25-001_com tjnuman dokan](https://user-images.githubusercontent.com/34963162/116926981-ddada900-ac7c-11eb-8877-f8cba8956928.jpg)
+![Screenshot_2021-05-04-01-18-48-679_com tjnuman dokan](https://user-images.githubusercontent.com/34963162/116926988-df776c80-ac7c-11eb-8017-8e168c73b2f0.jpg)
+![Screenshot_2021-05-04-01-41-05-335_com tjnuman dokan](https://user-images.githubusercontent.com/34963162/116927038-ef8f4c00-ac7c-11eb-9c2f-4c8daccf1032.jpg)
+![Screenshot_2021-05-04-01-41-18-552_com tjnuman dokan](https://user-images.githubusercontent.com/34963162/116927050-f322d300-ac7c-11eb-81b3-75f656817d14.jpg)
+![Screenshot_2021-05-04-01-31-34-848_com tjnuman dokan](https://user-images.githubusercontent.com/34963162/116927075-fae27780-ac7c-11eb-8874-a7de8029ef3f.jpg)
+![Screenshot_2021-05-04-01-29-36-534_com tjnuman dokan](https://user-images.githubusercontent.com/34963162/116927078-fcac3b00-ac7c-11eb-90e0-2254274eefa1.jpg)
+
+
 # Dokan
 It is an E-commerce app. For the database managment I used Firebase.
 Admin and User can do their managment and shopping with one app. that means admin and user doesnt have to download different app from the play store
